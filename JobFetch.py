@@ -13,7 +13,7 @@ def search(keywords,location,salary,save,results):
     except:
         print("Results should be of numerical value")
         exit()
-    API_KEY = 'dc5d993e-9eb3-424a-a4b0-22c0a978a5b4'
+    API_KEY = API_KEY
     auth_string = f"{API_KEY}:".encode()
     encoded_auth =base64.b64encode(auth_string).decode()
     headers = {'Authorization':f'Basic {encoded_auth}' , 'Content-type': 'application/json'}
@@ -54,4 +54,5 @@ if __name__ == "__main__":
     parser.add_argument('-s',help = "Specify the file name to save the details")
     args = parser.parse_args()
     search(args.keywords,args.location,args.salary,args.s,args.r)
+
 
